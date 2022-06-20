@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .global-worker {
+      display: flex;
+      border: 2px solid #424242;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .main {
+      width: 50%;
+    }
+    .worker {
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="global-worker">
+    <div class="main">
+      <h3>主线程</h3>
+      <p>uniqueId: <span id="uniqueId"></span></p>
+      <input type="text" id="prefix" placeholder="添加id前缀">
+      <button id="getId">get id</button>
+      <button id="requestLodash">通知worker请求Lodash</button>
+    </div>
+    <div class="worker">
+      <h3>web worker</h3>
+      <p id="isReceive">当前未引入Lodash</p>
+    </div>
+  </div>
+  <script src="./Dedicated/index.js"></script>
+</body>
+</html>
